@@ -1,0 +1,29 @@
+var http = require('http');
+var clientList = [];  
+
+var server = http.createServer(function(request, response) { 
+	console.log('request was made: ' + request.url);
+	response.writeHead(200, {"Content-Type": "text/html", "Access-control-allow-origin": "*"});  
+	response.write("Hello " + request.connection.remoteAddress + "!" + '\n');
+	response.write("Welcome to this poopy chatroom.");
+	response.end();
+});
+
+
+/*server.on('connection', function(client){
+	client.name = client.connection.remoteAddress;
+	client.write('Chat Server : Welcome to Chat, ' + client.name + '\n');
+	clientList.push(client.name);
+}); 
+*/
+
+
+
+
+
+
+server.listen(9000);
+server.on("load", function() { 
+	console.log("Chat server loaded."); 
+});
+server.emit("load"); //custom event
