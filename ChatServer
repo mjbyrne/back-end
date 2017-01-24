@@ -1,11 +1,12 @@
 var http = require('http');
+var events = require('events');
 var clientList = [];  
 
 var server = http.createServer(function(request, response) { 
 	console.log('request was made: ' + request.url);
 	response.writeHead(200, {"Content-Type": "text/html", "Access-control-allow-origin": "*"});  
-	response.write("Hello " + request.connection.remoteAddress + "!" + '\n');
-	response.write("Welcome to this poopy chatroom.");
+	response.write("Hello " + request.url + "!" + '\n');
+	response.write("Welcome to this basic chatroom.");
 	response.end();
 });
 
