@@ -9,5 +9,13 @@
 	<body>
 		<h1>Before entering the chat room, please enter your username.</h1>
 		<input type="text" placeholder="Username">
+		<button id="enterButton">Enter Chatroom</button>
+		<script type="text/javascript">
+    		document.getElementById("enterButton").onclick = function () {
+    			clientList = [] + *******************************************************
+        		location.href = "localhost:9000/chatroom";
+    };
+</script>
+
 	</body>
 </html>
