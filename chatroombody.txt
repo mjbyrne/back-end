@@ -1,0 +1,8 @@
+<div class="chatroom">
+	<div class="messageBox">
+		<div class="enteredMessages">
+			<!prior messages show up here>
+		</div>
+	</div>
+	<textarea class="enterTextArea" placeholder="Enter your message"></textarea>
+</div>
