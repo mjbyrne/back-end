@@ -2,20 +2,30 @@
 <html>
 	<head>
 		<style>
-		body{background: skyblue; font-family: verdana; color #fff; padding: 30px;}
-		h1{font_size: 48px; text-transform: uppercase; letter-spacing: 2px; text-align: center;}
+		<title>Mike's Modest Chatroom</title>
+		<link rel="stylesheet" href="chatroom.css">
 		</style>
 	</head>
-	<body>
+	<body id="pagebody">
 		<h1>Before entering the chat room, please enter your username.</h1>
-		<input type="text" placeholder="Username">
-		<button id="enterButton">Enter Chatroom</button>
-		<script type="text/javascript">
-    		document.getElementById("enterButton").onclick = function () {
-    			clientList = [] + *******************************************************
-        		location.href = "localhost:9000/chatroom";
-    };
-</script>
+		<input type="text" placeholder="Username" id="username">
+		<button type="button" id="enterButton">Enter Chatroom</button>
+	<script>
+	
+		var x = document.getElementById("enterButton");
+		x.addEventListener("click", nameAndEnter);
+		
+		function nameAndEnter(){
+			var clientName =  document.getElementById("username");
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+    			if (this.readyState == 4 && this.status == 200) {
+       				document.getElementById("pagebody").innerHTML = xmlhttp.responseText;
+    			}		
+			};
+		xhttp.open("GET", "chatroombody.txt", true);
+		xhttp.send(); 
 
+	</script>
 	</body>
 </html>
