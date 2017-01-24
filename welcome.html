@@ -10,22 +10,21 @@
 		<h1>Before entering the chat room, please enter your username.</h1>
 		<input type="text" placeholder="Username" id="username">
 		<button type="button" id="enterButton">Enter Chatroom</button>
-	<script>
 	
-		var x = document.getElementById("enterButton");
-		x.addEventListener("click", nameAndEnter);
+		<script>
+			var x = document.getElementById("enterButton");
+			x.addEventListener("click", nameAndEnter);
 		
-		function nameAndEnter(){
-			var clientName =  document.getElementById("username");
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-    			if (this.readyState == 4 && this.status == 200) {
-       				document.getElementById("pagebody").innerHTML = xmlhttp.responseText;
-    			}		
+			function nameAndEnter(){
+				var clientName = document.getElementById("username");
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+    				if (this.readyState == 4 && this.status == 200) {
+       					document.getElementById("pagebody").innerHTML = this.responseText;
+    				}		
 			};
-		xhttp.open("GET", "chatroombody.txt", true);
-		xhttp.send(); 
-
-	</script>
+			xhttp.open("GET", "chatroombody.txt", true);
+			xhttp.send(); 
+		</script>
 	</body>
 </html>
