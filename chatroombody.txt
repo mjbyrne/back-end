@@ -1,4 +1,4 @@
-<div class="chatroom">
+		<div class="chatroom">
 			<div class="messageBox">
 				<div class="enteredMessages" id="enteredMessages">
 					<!prior messages show up here>
@@ -10,8 +10,11 @@
 				if (event.which === 13) {
 					//enter key was pressed
 					var messageToAppend = document.getElementById("username") + ": " + document.getElementById("newMessage") + <br>;
+					//Take pieces to form "username: newMessage <br>"
 					var priorMessages = document.getElementById("enteredMessages");
+					//copy all prior messages
 					var newEnteredMessages = priorMessages + messageToAppend;
+					//add new message to the end of the prior messages
 					var xhttp = new XMLHttpRequest();
 					xhttp.onreadystatechange = function() {
     					if (this.readyState == 4) {
@@ -20,6 +23,7 @@
 					};
 				xhttp.open("GET", "newEnteredMessages", true);
 				xhttp.send();
+				//make the xmlhttp request to fill the prior message box with the prior messages + the new message
 				}
 				}
 			</script>
