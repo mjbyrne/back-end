@@ -7,12 +7,29 @@
 	<body>
 		<div class="chatroom">
 			<div class="messageBox">
-				<div class="enteredMessages">
+				<div class="enteredMessages" id="enteredMessages">
 					<!prior messages show up here>
 				</div>
 			</div>
-			<textarea class="enterTextArea" placeholder="Enter your message"></textarea>
-			
+			<textarea class="enterTextArea" id="newMessage" placeholder="Enter your message"></textarea>
+			<script>
+				document.getElementById("newMessage").addEventListener('enterKey', function(event){
+				if (event.which === 13) {
+					//enter key was pressed
+					var messageToAppend = document.getElementById("username") + ": " + document.getElementById("newMessage") + <br>;
+					var priorMessages = document.getElementById("enteredMessages");
+					var newEnteredMessages = priorMessages + messageToAppend;
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+    					if (this.readyState == 4) {
+       						document.getElementById("enteredMessages").innerHTML = this.responseText;
+    					}		
+					};
+				xhttp.open("GET", "newEnteredMessages", true);
+				xhttp.send();
+				}
+				}
+			</script>
 		</div>
 	</body>
 </html>
